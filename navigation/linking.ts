@@ -1,13 +1,7 @@
-/**
- * Learn more about deep linking with React Navigation
- * https://reactnavigation.org/docs/deep-linking
- * https://reactnavigation.org/docs/configuring-links
- */
-
 import { LinkingOptions } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 
-import { RootStackParamList } from '../types';
+import { RootStackParamList } from '../types/navigation';
 
 const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.createURL('/')],
@@ -15,19 +9,23 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Capital: {
             screens: {
-              TabOneScreen: 'one',
+              CapitalScreen: 'capital',
             },
           },
-          TabTwo: {
+          Spending: {
             screens: {
-              TabTwoScreen: 'two',
+              SpendingScreen: 'spending',
+            },
+          },
+          Saving: {
+            screens: {
+              SavingScreen: 'saving',
             },
           },
         },
       },
-      Modal: 'modal',
       NotFound: '*',
     },
   },
