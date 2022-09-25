@@ -14,14 +14,19 @@ const linking: LinkingOptions<RootStackParamList> = {
               CapitalScreen: 'capital',
             },
           },
-          Spending: {
+          Expenses: {
             screens: {
-              SpendingScreen: 'spending',
+              ExpensesScreen: 'expenses',
             },
           },
           Saving: {
             screens: {
               SavingScreen: 'saving',
+            },
+          },
+          Profile: {
+            screens: {
+              ProfileScreen: 'profile',
             },
           },
         },

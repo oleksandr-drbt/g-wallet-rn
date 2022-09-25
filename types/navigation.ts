@@ -2,7 +2,7 @@ import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/n
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import * as React from "react";
-import { MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 declare global {
   namespace ReactNavigation {
@@ -12,12 +12,14 @@ declare global {
 
 export type RootTabParamList = {
   Capital: undefined;
-  Spending: undefined;
+  Expenses: undefined;
   Saving: undefined;
+  Profile: undefined;
 };
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  AddCapitalSourceModal: undefined;
   NotFound: undefined;
 };
 
@@ -33,6 +35,8 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
 
 export type BottomTabsItem = {
   name: keyof RootTabParamList;
+  title: string;
+  icon: React.ComponentProps<typeof AntDesign>['name'];
   component: React.FC;
-  icon: React.ComponentProps<typeof MaterialIcons>['name'];
+  headerRightComponent?: React.FC,
 }

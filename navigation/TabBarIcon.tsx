@@ -1,9 +1,11 @@
 import * as React from "react";
-import { MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
-export default function TabBarIcon(props: {
-  name: React.ComponentProps<typeof MaterialIcons>['name'];
+interface TabBarIconProps {
+  name: React.ComponentProps<typeof AntDesign>['name'];
   color: string;
-}) {
-  return <MaterialIcons size={30} style={{ marginBottom: -3 }} {...props} />;
+}
+
+export default function TabBarIcon(props: TabBarIconProps) {
+  return <AntDesign size={27} {...props} />;
 }

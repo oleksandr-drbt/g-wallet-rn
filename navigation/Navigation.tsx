@@ -2,14 +2,21 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ColorSchemeName } from 'react-native';
 
+import BottomTabNavigator from "./BottomTabNavigator";
+import AddCapitalSourceScreen from "../screens/AddCapitalSourceScreen";
+import NotFoundScreen from "../screens/NotFoundScreen";
 import linking from './linking';
 import { RootStackParamList } from "../types/navigation";
-import BottomTabNavigator from "./BottomTabNavigator";
-import NotFound from "../screens/NotFound";
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
-export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+interface NavigationProps {
+  colorScheme: ColorSchemeName,
+}
+
+export default function Navigation(props: Required<NavigationProps>) {
+  const { colorScheme } = props;
+
   return (
     <NavigationContainer
       linking={linking}
@@ -17,7 +24,10 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
     >
       <RootStack.Navigator>
         <RootStack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-        <RootStack.Screen name="NotFound" component={NotFound} options={{ title: 'Oops!' }} />
+        <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+          <RootStack.Screen name="AddCapitalSourceModal" component={AddCapitalSourceScreen} />
+        </RootStack.Group>
+        <RootStack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

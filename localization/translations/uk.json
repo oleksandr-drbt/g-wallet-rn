@@ -1,0 +1,40 @@
+{
+  "uk": {
+    "capital": {
+      "title": "Капітал",
+      "balance": {
+        "description": "Ваш капітал складається з %{number} джерел"
+      },
+      "add": {
+        "title": "Додати джерело капіталу",
+        "cancel": "Скасувати",
+        "add": "Додати",
+        "name": {
+          "label": "Назва",
+          "placeholder": "Готівка, депозит..."
+        },
+        "amount": {
+          "label": "Сума",
+          "placeholder": "0"
+        },
+        "notAddedAlert": {
+          "title": "Не додано!",
+          "message": "Ви не можете додати більше ніж %{limit} джерел"
+        }
+      }
+    },
+    "expenses": {
+      "title": "Витрати"
+    },
+    "saving": {
+      "title": "Накопичення"
+    },
+    "profile": {
+      "title": "Профіль"
+    },
+    "notFound": {
+      "title": "Цього вікна не існує",
+      "button": "Відкрить головне вікно!"
+    }
+  }
+}

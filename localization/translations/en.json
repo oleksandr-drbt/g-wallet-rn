@@ -1,0 +1,40 @@
+{
+  "en": {
+    "capital": {
+      "title": "Capital",
+      "balance": {
+        "description": "Your capital consists of %{number} sources"
+      },
+      "add": {
+        "title": "Add capital source",
+        "cancel": "Cancel",
+        "add": "Add",
+        "name": {
+          "label": "Source name",
+          "placeholder": "e.g. cash, deposit..."
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "0"
+        },
+        "notAddedAlert": {
+          "title": "Not added!",
+          "message": "You can not add more than %{limit} capital sources"
+        }
+      }
+    },
+    "expenses": {
+      "title": "Expenses"
+    },
+    "saving": {
+      "title": "Saving"
+    },
+    "profile": {
+      "title": "Profile"
+    },
+    "notFound": {
+      "title": "This screen doesn't exist",
+      "button": "Go to main screen!"
+    }
+  }
+}
