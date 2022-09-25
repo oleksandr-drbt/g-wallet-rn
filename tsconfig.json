@@ -3,6 +3,10 @@
   "compilerOptions": {
     "strict": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
-  }
+    "strictNullChecks": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "@Assets/*": ["assets/*"]
+    }
+  },
 }
