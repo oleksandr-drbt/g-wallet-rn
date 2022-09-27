@@ -1,14 +1,12 @@
 {
   "en": {
+    "cancel": "Cancel",
     "capital": {
       "title": "Capital",
       "balance": {
         "description": "Your capital consists of %{number} sources"
       },
-      "add": {
-        "title": "Add capital source",
-        "cancel": "Cancel",
-        "add": "Add",
+      "source": {
         "name": {
           "label": "Source name",
           "placeholder": "e.g. cash, deposit..."
@@ -16,11 +14,19 @@
         "amount": {
           "label": "Amount",
           "placeholder": "0"
-        },
+        }
+      },
+      "add": {
+        "title": "Add capital source",
+        "add": "Add",
         "notAddedAlert": {
           "title": "Not added!",
           "message": "You can not add more than %{limit} capital sources"
         }
+      },
+      "edit": {
+        "title": "Edit capital source",
+        "save": "Save"
       }
     },
     "expenses": {

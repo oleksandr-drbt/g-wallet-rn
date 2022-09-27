@@ -32,6 +32,8 @@ const linking: LinkingOptions<RootStackParamList> = {
         },
       },
       NotFound: '*',
+      AddCapitalSourceModal: 'AddCapitalSourceModal',
+      EditCapitalSourceModal: 'EditCapitalSourceModal',
     },
   },
 };

@@ -21,6 +21,6 @@ export const loadCapitalSources = (): Promise<CapitalResponse> => {
           },
         ],
       });
-    }, 2000);
+    }, 1000);
   });
 };

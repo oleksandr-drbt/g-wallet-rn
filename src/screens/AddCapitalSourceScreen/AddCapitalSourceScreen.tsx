@@ -3,14 +3,12 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 
 import { View } from "@/components/Themed";
-import BackButton from "@/components/comon/BackButton";
 import CapitalSourceForm from "@/components/CapitalSourceForm";
 import i18n from "@/localization/i18n";
 import useAppSelector from "@/hooks/useAppSelector";
 import useAppDispatch from "@/hooks/useAppDispatch";
 import { addSource, selectSources } from "@/store/capitalSlice";
 import { RootStackScreenProps } from "@/types/navigation";
-import Colors from "@/constants/Colors";
 import styles from "./styles";
 
 const CAPITAL_SOURCES_LIMIT = 20;
@@ -24,13 +22,7 @@ export default function AddCapitalSourceScreen(props: RootStackScreenProps<'AddC
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    navigation.setOptions({
-      headerTitle: i18n.t('capital.add.title'),
-      headerLeft: () => <BackButton title={i18n.t('capital.add.cancel')} />,
-      headerStyle: styles.header,
-      headerTitleStyle: styles.headerTitle,
-      headerTintColor: Colors.shared.white,
-    });
+    navigation.setOptions({ headerTitle: i18n.t('capital.add.title') });
   }, []);
 
   const addCapitalSource = (name: string, amount: number) => {
@@ -48,7 +40,7 @@ export default function AddCapitalSourceScreen(props: RootStackScreenProps<'AddC
       dispatch(addSource({ name, amount }));
       setIsAdding(false);
       navigation.goBack();
-    }, 2000);
+    }, 1000);
   };
 
   return (

@@ -4,6 +4,8 @@ import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import * as React from "react";
 import { AntDesign } from "@expo/vector-icons";
 
+import { CapitalSource } from "@/types/capital";
+
 declare global {
   namespace ReactNavigation {
     interface RootParamList extends RootStackParamList {}
@@ -20,6 +22,7 @@ export type RootTabParamList = {
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   AddCapitalSourceModal: undefined;
+  EditCapitalSourceModal: CapitalSource;
   NotFound: undefined;
 };
 

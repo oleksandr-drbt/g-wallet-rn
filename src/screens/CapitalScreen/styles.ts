@@ -6,9 +6,4 @@ export default StyleSheet.create({
   container: {
     ...Styles.container,
   },
-  list: {
-    marginTop: 20,
-    marginRight: -10,
-    paddingRight: 10,
-  },
 });

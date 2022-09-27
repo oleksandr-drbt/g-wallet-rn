@@ -23,10 +23,23 @@ const capitalSlice = createSlice({
       const source = { id: lastSource.id + 1, ...action.payload };
       state.sources = [...state.sources, source];
     },
+    editSource(state, action: PayloadAction<CapitalSource>) {
+      state.sources = state.sources.map((source) => {
+        return source.id === action.payload.id ? action.payload : source;
+      });
+    },
+    removeSource(state, action: PayloadAction<number>) {
+      state.sources = state.sources.filter(({ id }) => id !== action.payload);
+    },
   },
 });
 
-export const { setSources, addSource } = capitalSlice.actions;
+export const {
+  setSources,
+  addSource,
+  editSource,
+  removeSource,
+} = capitalSlice.actions;
 
 export const selectSources = (state: RootState) => state.capital.sources;
 

@@ -1,9 +1,8 @@
-import { FlatList, RefreshControl } from "react-native";
 import { useEffect, useMemo, useState } from "react";
 
 import { View } from '@/components/Themed';
 import BalanceCard from "@/components/BalanceCard";
-import CapitalSourceCard from "@/components/CapitalSourceCard";
+import CapitalSourceList from "@/components/CapitalSourceList";
 import i18n from "@/localization/i18n";
 import useAppSelector from "@/hooks/useAppSelector";
 import useAppDispatch from "@/hooks/useAppDispatch";
@@ -20,7 +19,7 @@ export default function CapitalScreen() {
 
   const totalAmount = useMemo(() => sources.reduce((total, { amount }) => total + amount, 0), [sources]);
 
-  const loadIncomes = () => {
+  const loadSources = () => {
     setIsLoading(true);
     (async () => {
       try {
@@ -32,7 +31,7 @@ export default function CapitalScreen() {
     })();
   };
 
-  useEffect(loadIncomes, []);
+  useEffect(loadSources, []);
 
   return (
     <View style={styles.container}>
@@ -42,13 +41,10 @@ export default function CapitalScreen() {
         currency="UAH"
         color={Colors.light.tint}
       />
-      <FlatList
-        data={sources}
-        keyExtractor={item => item.id.toString()}
-        renderItem={CapitalSourceCard}
-        refreshControl={<RefreshControl refreshing={isLoading} onRefresh={loadIncomes} />}
-        scrollEnabled={true}
-        style={styles.list}
+      <CapitalSourceList
+        items={sources}
+        isLoading={isLoading}
+        onRefresh={loadSources}
       />
     </View>
   );
